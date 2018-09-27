@@ -1,29 +1,26 @@
 ﻿using System;
+using Simcorp.IMS.Phone;
 
 namespace SMSPhone {
-    public class StringFormatter {
-        public string FormatNone(string message) {
-            return $"{message}" + Environment.NewLine;
+    public static class StringFormatter {
+        public static string FormatNone(SMSMessage message) {
+            return $"{message.Text}" + Environment.NewLine;
         }
 
-        public string FormatStartDateTime(string message) {
-            return $"[{GetTime()}] {message}" + Environment.NewLine;
+        public static string FormatStartDateTime(SMSMessage message) {
+            return $"[{message.ReceivingTime}] {message.Text}" + Environment.NewLine;
         }
 
-        public string FormatEndDateTime(string message) {
-            return $"{message} [{GetTime()}]" + Environment.NewLine;
+        public static string FormatEndDateTime(SMSMessage message) {
+            return $"{message.Text} [{message.ReceivingTime}]" + Environment.NewLine;
         }
 
-        public string FormatUpper(string message) {
-            return $"[{GetTime()}] {message.ToUpper()}" + Environment.NewLine;
+        public static string FormatUpper(SMSMessage message) {
+            return $"[{message.ReceivingTime}] {message.Text.ToUpper()}" + Environment.NewLine;
         }
 
-        public string FormatLower(string message) {
-            return $"[{GetTime()}] {message.ToLower()}" + Environment.NewLine;
-        }
-
-        protected virtual string GetTime() {
-            return $"{DateTime.Now}";
+        public static string FormatLower(SMSMessage message) {
+            return $"[{message.ReceivingTime}] {message.Text.ToLower()}" + Environment.NewLine;
         }
     }
 }

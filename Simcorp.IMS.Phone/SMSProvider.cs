@@ -1,13 +1,13 @@
 ﻿namespace Simcorp.IMS.Phone {
-    public class SMSProvider {
-        public delegate void SMSReceivedDelegate(string message);
+    internal class SMSProvider {
+        public delegate void SMSReceivedDelegate(SMSMessage message);
         public event SMSReceivedDelegate SMSReceived;
 
-        public void SendSMS(string message) {
+        public void SendSMS(SMSMessage message) {
             RaiseSMSReseivedEvent(message);
         }
 
-        private void RaiseSMSReseivedEvent(string message){
+        private void RaiseSMSReseivedEvent(SMSMessage message){
             var handler = SMSReceived;
             if (handler != null) {
                 handler(message);

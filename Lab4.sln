@@ -27,7 +27,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPlayTest", "IPlayTest\IPla
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMSPhone", "SMSPhone\SMSPhone.csproj", "{A9433FD0-8A14-45E6-A8B4-B5FD1C73FA9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormatTest", "UnitTestProject1\FormatTest.csproj", "{C8A5168F-A300-4C89-ABD0-8A5002A29298}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilterTest", "FilterTest\FilterTest.csproj", "{8556642D-355A-46FA-97C0-B153437CE187}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -79,16 +79,16 @@ Global
 		{A9433FD0-8A14-45E6-A8B4-B5FD1C73FA9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9433FD0-8A14-45E6-A8B4-B5FD1C73FA9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9433FD0-8A14-45E6-A8B4-B5FD1C73FA9B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C8A5168F-A300-4C89-ABD0-8A5002A29298}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C8A5168F-A300-4C89-ABD0-8A5002A29298}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C8A5168F-A300-4C89-ABD0-8A5002A29298}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C8A5168F-A300-4C89-ABD0-8A5002A29298}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8556642D-355A-46FA-97C0-B153437CE187}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8556642D-355A-46FA-97C0-B153437CE187}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8556642D-355A-46FA-97C0-B153437CE187}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8556642D-355A-46FA-97C0-B153437CE187}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{DD9D7136-0970-44A9-8037-AA8F1626C567} = {06AEDEEC-BFB0-4353-90ED-8C0AC9D3F7A3}
-		{C8A5168F-A300-4C89-ABD0-8A5002A29298} = {06AEDEEC-BFB0-4353-90ED-8C0AC9D3F7A3}
+		{8556642D-355A-46FA-97C0-B153437CE187} = {06AEDEEC-BFB0-4353-90ED-8C0AC9D3F7A3}
 	EndGlobalSection
 EndGlobal

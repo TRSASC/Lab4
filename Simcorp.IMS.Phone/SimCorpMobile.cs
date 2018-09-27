@@ -21,6 +21,7 @@ namespace Simcorp.IMS.Phone {
         private VideoCamera vMainCamera;
         private VideoCamera vFrontalCamera;
         private string vSpeakerName;
+        private MsgStorage vMsgStor;
 
         public override BaseBattery Battery { get { return vBattery; } }
         public override BaseSpeakerSystem Speaker { get { return vSpeaker; } }
@@ -32,9 +33,11 @@ namespace Simcorp.IMS.Phone {
         public VideoCamera MainCamera { get { return vMainCamera; } }
         public VideoCamera FrontalCamera { get { return vFrontalCamera; } }
         public override string SpeakerName { get { return vSpeakerName; } }
+        public override MsgStorage MsgStor { get { return vMsgStor; } }
         public override IPlay PlaybackDevice { get; set; }
         public override string PlaybackDeviceName { get; set; }
         public override IOutput Output { get; set; }
+
         
 
         private void MakePhoto(IView view) {
@@ -60,6 +63,8 @@ namespace Simcorp.IMS.Phone {
             vMainCamera = new VideoCamera("Main", 13, true, true);
             vFrontalCamera = new VideoCamera("Frontal", 5, true, true);
             SMSProvider = new SMSProvider();
+            vMsgStor = new MsgStorage();
+            SMSProvider.SMSReceived += OnSMSReceived;
         }
 
         public override string GetDescription() {
@@ -68,6 +73,16 @@ namespace Simcorp.IMS.Phone {
             descriptionBuilder.AppendLine($"{MainCamera.ToString()}");
             descriptionBuilder.AppendLine($"{FrontalCamera.ToString()}");
             return descriptionBuilder.ToString();
+        }
+
+        public void GenerateSMS() {
+            string SMSsender = SenderOps.GenerateSender();
+            SMSMessage message = new SMSMessage(SMSsender, "Message");
+            SMSProvider.SendSMS(message);
+        }
+
+        private void OnSMSReceived(SMSMessage message) {
+            MsgStor.Add(message);
         }
 
         public void SetPlaybackDevice() {
