@@ -77,7 +77,7 @@ namespace Simcorp.IMS.Phone {
 
         public void GenerateSMS() {
             string SMSsender = SenderOps.GenerateSender();
-            SMSMessage message = new SMSMessage(SMSsender, "Message");
+            SMSMessage message = new SMSMessage(SMSsender, "Hello, It's " + SMSsender);
             SMSProvider.SendSMS(message);
         }
 

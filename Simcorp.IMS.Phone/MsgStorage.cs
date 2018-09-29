@@ -33,9 +33,9 @@ namespace Simcorp.IMS.Phone {
             IEnumerable<SMSMessage> query = msgList.
                                             Select(m => m);
             if (andcond) {
-                query = query.Where(m => m.Text.Contains(searchText) && (fromDate <= m.ReceivingTime.Date && toDate >= m.ReceivingTime.Date));
+                query = query.Where(m => m.Text.ToLower().Contains(searchText.ToLower()) && (fromDate <= m.ReceivingTime.Date && toDate >= m.ReceivingTime.Date));
             } else {
-                query = query.Where(m => m.Text.Contains(searchText) || (fromDate <= m.ReceivingTime.Date && toDate >= m.ReceivingTime.Date));
+                query = query.Where(m => m.Text.ToLower().Contains(searchText.ToLower()) || (fromDate <= m.ReceivingTime.Date && toDate >= m.ReceivingTime.Date));
             }
             if (!String.IsNullOrEmpty(sender)) {
                 query = query.Where(m => m.User == sender);
